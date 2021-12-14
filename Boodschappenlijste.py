@@ -2,7 +2,7 @@ process = True
 boodschappenlijst = {}
 while process:
     Productvraag = input('Wat voor product wilt u toevoegen aan de boodschappenlijstje? ')
-    if Productvraag in boodschappenlijst:
+    if Productvraag.lower() in boodschappenlijst:
         boodschappenlijst[Productvraag.lower()] += 1
     else:
         boodschappenlijst[Productvraag.lower()] = 1
