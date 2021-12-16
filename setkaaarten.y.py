@@ -1,6 +1,5 @@
 
 import random
-Setkaarten = []
 nummers= ['Aas',2,3,4,5,6,7,8,9,10,'Boer', 'Vrouw', 'Heer']
 typen= ['Klaveren', 'Schoppen', 'Ruiten', 'Harten']
 deck = []
