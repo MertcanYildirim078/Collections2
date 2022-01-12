@@ -54,18 +54,34 @@ def vervolgkeuzekeus(Keuzedobbelsteen,a,b,c,d):
         print(f'Uw keuze was: {c}')
     elif Keuzedobbelsteen == 'D' or 'd':
         print(f'Uw keuze was: {d}')
-    
+
+def KeuzeTabel(blauwedobbelsteen,rooddobbelsteen):
+    if blauwedobbelsteen > rooddobbelsteen:
+        Keuzetabel = 'Red'
+    elif rooddobbelsteen > blauwedobbelsteen:
+        Keuzetabel = 'Blue'
+    elif blauwedobbelsteen == rooddobbelsteen:
+        Keuzetabel = 'Beide'
+    return Keuzetabel
+
+def Appendtabel(a,b,c,d,Keuzetabel,roodtabel,blauwetabel,Dobbelsteenvragen):
+    if Keuzetabel == 'Red':
+        roodtabel.append(Dobbelsteenvragen)
+
 
 
 def doubletrobbel():
-    wittedobbelsteen,rodedobbelsteen,blauwedobbelsteen,dobbellist = dobbelsteenrollen()
-    a,b,c,d = dobbelsteenberekening(blauwedobbelsteen,rodedobbelsteen,wittedobbelsteen,dobbellist)
-    printdobbel = printdobbelstenen(rodedobbelsteen,blauwedobbelsteen,wittedobbelsteen,a,b,c,d)
-    Dobbelsteenvragen = Dobbelsteenkeuzen()
-    vervolgkeuzekeus(Dobbelsteenvragen,a,b,c,d)
-
+    rooddobbelsteen,blauwedobbelsteen,wittedobbelsteen,dobbellist = dobbelsteenrollen()
+    a,b,c,d = dobbelsteenberekening(blauwedobbelsteen,rooddobbelsteen,wittedobbelsteen,dobbellist)
+    printdobbel = printdobbelstenen(rooddobbelsteen,blauwedobbelsteen,wittedobbelsteen,a,b,c,d)
+    Keuzetabel = KeuzeTabel(blauwedobbelsteen,rooddobbelsteen)
+    print('De gekozen tabel(en) =', Keuzetabel)
     print(roodtabel)
     print(blauwetabel)
+    print('-----------------------------------------------------------------')
     print(wittetabel)
+    print('-----------------------------------------------------------------')
+    Dobbelsteenvragen = Dobbelsteenkeuzen()
+    vervolgkeuzekeus(Dobbelsteenvragen,a,b,c,d)
 
 doubletrobbel()
