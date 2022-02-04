@@ -228,7 +228,7 @@ def Stopspel():
              print('Dat is geen geldige optie!')
     return stop
     
-def doubletrobbel(roodtabel,blauwetabel,wittetabel):
+def doubletrobbel(roodtabel,blauwetabel,wittetabel,positiewittetabel):
     waarschuwing()
     ronde = 1
     while True:
@@ -246,7 +246,7 @@ def doubletrobbel(roodtabel,blauwetabel,wittetabel):
         Dubbelcijfers = controleerdubbelcijfers(Keuzetabel,Keuzedobbelsteen,roodtabel,blauwetabel,a,b,c,d)
         roodtabel,blauwetabel,positie = Appendtabel(a,b,c,d,Keuzetabel,roodtabel,blauwetabel,Keuzedobbelsteen,positie)
         Mintwee = mintweecontrole()
-        Positiewittetabel = appendwittetabel(wittedobbelsteen,wittetabel,Keuzedobbelsteen,positiewittetabel)
+        positiewittetabel = appendwittetabel(wittedobbelsteen,wittetabel,Keuzedobbelsteen,positiewittetabel)
         Wittetabelcontrole = wittetabelcontrole(positiewittetabel)
         roodtabel,blauwetabel,wittetabel = printtabel(roodtabel,blauwetabel,wittetabel)
         stop = Stopspel()
@@ -299,4 +299,4 @@ def doubletrobbel(roodtabel,blauwetabel,wittetabel):
             printeindscore(Eindscore)
             return False
 
-doubletrobbel(roodtabel,blauwetabel,wittetabel)
+doubletrobbel(roodtabel,blauwetabel,wittetabel,positiewittetabel)
